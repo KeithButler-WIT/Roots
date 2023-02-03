@@ -1,13 +1,11 @@
 extends Node2D
 
+var isTarget : bool = false
 
 func _ready():
 	#deleteCurrency()
 	pass
-	
-	
-#func _process(_delta):
-#	deleteCurrency()
+
 
 func deleteCurrency():
 	# Add a timer to this node

@@ -1,14 +1,17 @@
 extends Node2D
 
+export(Array, PackedScene) var scenes
 
 func _ready():
-	spawnItem(60)
+	spawnItem(20)
 
 func spawnItem(var numItems):
-	var itemScene = preload("res://Scenes/Item.tscn")
+	#var itemScene = preload("res://Scenes/Item.tscn")
 	var rand = RandomNumberGenerator.new()
 	var screen_size = get_viewport().get_visible_rect().size
 	for i in range(0,numItems):
+		rand.randomize()
+		var itemScene = scenes[rand.randi_range(0,len(scenes)-1)]
 		var item = itemScene.instance()
 		rand.randomize()
 		var x = rand.randf_range(0,screen_size.x)
