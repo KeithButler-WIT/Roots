@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/FollowMouse.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/mouseborder.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Main.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/ItemSpawner.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Item.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Item1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Item2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Background spike root.png" type="Texture" id=8]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game Window" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="MouseBorder" type="Sprite" parent="."]
@@ -21,52 +22,7 @@ process_priority = -10
 script = ExtResource( 4 )
 scenes = [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
 
-[node name="Main Menu" type="MarginContainer" parent="."]
-visible = false
-custom_constants/margin_right = 240
-custom_constants/margin_top = 300
-custom_constants/margin_left = 120
-custom_constants/margin_bottom = 160
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Main Menu"]
-margin_left = 120.0
-margin_top = 300.0
-margin_right = 152.0
-margin_bottom = 340.0
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Main Menu/HBoxContainer"]
-margin_right = 28.0
-margin_bottom = 40.0
-
-[node name="Logo" type="TextureRect" parent="Main Menu/HBoxContainer/VBoxContainer2"]
-margin_right = 28.0
-
-[node name="MenuOptions" type="VBoxContainer" parent="Main Menu/HBoxContainer/VBoxContainer2"]
-margin_top = 4.0
-margin_right = 28.0
-margin_bottom = 36.0
-
-[node name="Play" type="Label" parent="Main Menu/HBoxContainer/VBoxContainer2/MenuOptions"]
-margin_right = 28.0
-margin_bottom = 14.0
-text = "Play"
-
-[node name="Quit" type="Label" parent="Main Menu/HBoxContainer/VBoxContainer2/MenuOptions"]
-margin_top = 18.0
-margin_right = 28.0
-margin_bottom = 32.0
-text = "Quit"
-
-[node name="Version" type="TextureRect" parent="Main Menu/HBoxContainer/VBoxContainer2"]
-margin_top = 40.0
-margin_right = 28.0
-margin_bottom = 40.0
-
-[node name="CenterContainer" type="CenterContainer" parent="Main Menu/HBoxContainer"]
-margin_left = 32.0
-margin_right = 32.0
-margin_bottom = 40.0
-
-[node name="image" type="TextureRect" parent="Main Menu/HBoxContainer/CenterContainer"]
-margin_top = 20.0
-margin_bottom = 20.0
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 480, 260 )
+z_index = -100
+texture = ExtResource( 8 )

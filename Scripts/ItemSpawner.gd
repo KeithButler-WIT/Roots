@@ -14,9 +14,9 @@ func spawnItem(var numItems):
 		var itemScene = scenes[rand.randi_range(0,len(scenes)-1)]
 		var item = itemScene.instance()
 		rand.randomize()
-		var x = rand.randf_range(0,screen_size.x)
+		var x = rand.randf_range(0,screen_size.x-100)
 		rand.randomize()
-		var y = rand.randf_range(0,screen_size.y)
+		var y = rand.randf_range(0,screen_size.y-100)
 		item.rotation = rand.randf_range(0,360)
 		item.position.y = y
 		item.position.x = x
