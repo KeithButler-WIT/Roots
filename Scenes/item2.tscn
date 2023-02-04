@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Item.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/comb.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/brush.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.4, 15 )
+extents = Vector2( 14.6, 30 )
 
 [node name="RigidBody2D" type="KinematicBody2D"]
 scale = Vector2( 5, 5 )

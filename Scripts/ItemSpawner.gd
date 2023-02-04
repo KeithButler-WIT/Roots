@@ -3,7 +3,7 @@ extends Node2D
 export(Array, PackedScene) var scenes
 
 func _ready():
-	spawnItem(20)
+	spawnItem(10)
 
 func spawnItem(var numItems):
 	#var itemScene = preload("res://Scenes/Item.tscn")

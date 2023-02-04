@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/FollowMouse.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/mouseborder.png" type="Texture" id=2]
@@ -6,8 +6,11 @@
 [ext_resource path="res://Scripts/ItemSpawner.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/item3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Item1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Item2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/Background spike root.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/item2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/wooden pattern.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 484, 262 )
 
 [node name="Game Window" type="Node2D"]
 script = ExtResource( 3 )
@@ -26,3 +29,17 @@ scenes = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ]
 position = Vector2( 480, 260 )
 z_index = -100
 texture = ExtResource( 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
+z_index = -10
+shape = SubResource( 1 )
+disabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
+scale = Vector2( 4.66679, -7.88297 )
+z_index = -10
+build_mode = 1
+polygon = PoolVector2Array( -103.497, -32.7288, 102.64, -32.2214, 101.569, 32.4751, -100.926, 32.4751 )
